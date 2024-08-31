@@ -13,11 +13,9 @@ const FilterForm = () => {
   const dispatch = useDispatch();
   const { filters } = useAppSelector((store) => store.user);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    if (name in filters) {
-      dispatch(setFilters({ [name]: value }));
+  const handleInputChange = (key: UserFilterKeys, value: string) => {
+    if (key in filters) {
+      dispatch(setFilters({ [key]: value }));
     }
   };
 
@@ -28,10 +26,9 @@ const FilterForm = () => {
         {inputTypes.map((type) => (
           <DefaultInput
             key={type}
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(type, e.target.value)}
             value={filters[type]}
             id={`${type}_id`}
-            name={type}
             placeholder={`filter by ${type}`}
             className={styles.input}
           />
