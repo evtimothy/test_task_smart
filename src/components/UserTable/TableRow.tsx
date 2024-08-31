@@ -11,12 +11,20 @@ interface ITableRowProps {
 const TableRow: FC<ITableRowProps> = ({ name, username, email, phone }) => {
   return (
     <>
-      <div className={styles.table_row}>
-        <div>{name}</div>
-        <div>{username}</div>
-        <div>{email}</div>
-        <div>{phone}</div>
-      </div>
+      <li className={styles.table_row}>
+        <div className={styles.col} data-label="Name">
+          {name}
+        </div>
+        <div className={styles.col} data-label="Username">
+          {username}
+        </div>
+        <div className={styles.col} data-label="Email">
+          {email}
+        </div>
+        <div className={styles.col} data-label="Phone">
+          {phone}
+        </div>
+      </li>
     </>
   );
 };

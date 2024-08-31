@@ -1,4 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+
+  font-family: "Segoe UI", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
