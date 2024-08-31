@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 0.25rem 0;
+
+  & > div {
+    text-align: center;
+    max-width: 1200px;
+    flex: 1;
+
+    p {
+      color: #002641;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    hr {
+      height: 1px;
+      background: #00a598;
+      opacity: 1;
+      border: 0;
+      margin: 20px;
+    }
+  }
+}

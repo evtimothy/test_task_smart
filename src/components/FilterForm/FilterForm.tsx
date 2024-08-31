@@ -27,6 +27,7 @@ const FilterForm = () => {
       <div className={styles.inputs}>
         {inputTypes.map((type) => (
           <DefaultInput
+            key={type}
             onChange={handleInputChange}
             value={filters[type]}
             id={`${type}_id`}

@@ -7,7 +7,12 @@ type DefaultInputProps = InputHTMLAttributes<HTMLInputElement>;
 const DefaultInput: FC<DefaultInputProps> = ({ className, autoComplete, ...props }) => {
   return (
     <>
-      <input {...props} type="text" className={clsx(styles.input, className)} />
+      <input
+        {...props}
+        type="text"
+        autoComplete="off"
+        className={clsx(styles.input, className)}
+      />
     </>
   );
 };
