@@ -1,0 +1,22 @@
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 16rem);
+  gap: 1rem;
+}
+
+.input {
+  &::placeholder {
+    text-transform: capitalize;
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #002641;
+}
+
+@media all and (max-width: 1098px) {
+  .inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
