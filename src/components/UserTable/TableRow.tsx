@@ -1,4 +1,5 @@
 import { FC } from "react";
+import styles from "./UserTable.module.scss";
 
 interface ITableRowProps {
   name: string;
@@ -10,7 +11,7 @@ interface ITableRowProps {
 const TableRow: FC<ITableRowProps> = ({ name, username, email, phone }) => {
   return (
     <>
-      <div style={{ display: "flex", gap: "16px" }}>
+      <div className={styles.table_row}>
         <div>{name}</div>
         <div>{username}</div>
         <div>{email}</div>

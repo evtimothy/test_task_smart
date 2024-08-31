@@ -1,7 +1,7 @@
 export interface IUser {
   id: number;
-  username: string;
   name: string;
+  username: string;
   email: string;
   address: IAddress;
   phone: string;
@@ -28,9 +28,17 @@ export interface IGeo {
   lng: string;
 }
 
+export interface IUserFilter {
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+}
+
 // STATE TYPE
 export interface IUserState {
   users: IUser[];
+  filters: IUserFilter;
   isLoading: boolean;
   error: string;
 }

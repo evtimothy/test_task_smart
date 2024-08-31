@@ -1,15 +1,16 @@
 import TableRow from "./TableRow";
 import { useAppSelector } from "../../store/hooks";
 import { useFetchUsers } from "../../hooks/useFetchUsers";
+import { selectFilteredUsers } from "../../store/selectors/userSelectors";
 
 const TableView = () => {
   useFetchUsers();
 
-  const { users, error } = useAppSelector((store) => store.user);
+  const userList = useAppSelector(selectFilteredUsers);
 
   return (
     <>
-      {users.map((item) => (
+      {userList.map((item) => (
         <TableRow
           key={item.id}
           name={item.name}

@@ -1,4 +1,4 @@
-import TableView from "../components/table/TableView";
+import TableView from "../components/UserTable/TableView";
 
 const TablePage = () => {
   return (

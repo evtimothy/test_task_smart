@@ -1,9 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { IUserState } from "../types/user";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { IUserFilter, IUserState } from "../types/user";
 import { fetchUsers } from "../actions/userActions";
 
 const initialState: IUserState = {
   users: [],
+  filters: { name: "", username: "", email: "", phone: "" },
   isLoading: false,
   error: "",
 };
@@ -11,7 +12,11 @@ const initialState: IUserState = {
 export const userSlice = createSlice({
   name: "user",
   initialState,
-  reducers: {},
+  reducers: {
+    setFilters: (state, action: PayloadAction<Partial<IUserFilter>>) => {
+      state.filters = { ...state.filters, ...action.payload };
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true;
@@ -27,5 +32,7 @@ export const userSlice = createSlice({
     });
   },
 });
+
+export const { setFilters } = userSlice.actions;
 
 export default userSlice.reducer;
